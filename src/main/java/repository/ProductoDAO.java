@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class ProductoDAO implements MetodosGenerico<Producto> {
     @Override
     public ArrayList<Producto> listar() {
-        ArrayList<Producto> productos = null;
+        ArrayList<Producto> productos = new ArrayList<>();
         try{
             Connection con = Conexion.getConexion();
             String query = "SELECT * FROM producto";

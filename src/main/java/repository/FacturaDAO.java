@@ -15,7 +15,7 @@ public class FacturaDAO implements MetodosGenerico<Factura> {
 
     @Override
     public ArrayList<Factura> listar() {
-        ArrayList<Factura> facturas = null;
+        ArrayList<Factura> facturas = new ArrayList<>();
         try{
             Connection con = Conexion.getConexion();
             String query = "SELECT * FROM factura";
@@ -27,6 +27,7 @@ public class FacturaDAO implements MetodosGenerico<Factura> {
                 factura.setIdCliente(resultado.getInt("idCliente"));
                 factura.setIdProducto(resultado.getInt("idProducto"));
                 factura.setCantidad(resultado.getInt("cantidad"));
+                System.out.println(resultado.getDate("fecha"));
                 factura.setFecha(resultado.getDate("fecha").toLocalDate());
                 factura.setTotal(resultado.getFloat("total"));
 

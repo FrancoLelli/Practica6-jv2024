@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ClienteDAO implements MetodosGenerico<Cliente> {
     public ArrayList<Cliente> listar(){
-        ArrayList<Cliente> clientes = null;
+        ArrayList<Cliente> clientes = new ArrayList<>();
         try{
             Connection con = Conexion.getConexion();
             if(con != null){
